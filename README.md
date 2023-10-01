@@ -1,1 +1,1 @@
-# The Doomsday Algorithm Tester (XLS format)
+# The Doomsday Algorithm Memory Tester (XLS format)
