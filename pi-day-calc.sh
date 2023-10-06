@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+
+# Stephen Burke 10/06/2023
 
 weirdrange=(0 1 2 3 5 6 0 1 3 4 5 6 1 2 3 4 6 0 1 2 4 5 6 0 2 3 4 5)
 count=0
@@ -35,7 +38,7 @@ do
     else
         z=$y
     fi
-    echo "In ${prefix}${i} pi day (3/14) was on a ${days[$z]}" | grep $year 2> /dev/null 
+    echo "In ${prefix}${i} pi day (3/14) falls on a ${days[$z]}" | grep $year 2> /dev/null 
     if [[ $count -gt 27 ]]; then
         count=1
     else
