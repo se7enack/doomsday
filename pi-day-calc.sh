@@ -2,10 +2,6 @@
 
 # Stephen Burke 10/06/2023
 
-myalgorithm=(0 1 2 3 5 6 0 1 3 4 5 6 1 2 3 4 6 0 1 2 4 5 6 0 2 3 4 5)
-
-startdays=(0 5 3 2)
-
 days[0]='Sunday'
 days[1]='Monday'
 days[2]='Tuesday'
@@ -19,13 +15,14 @@ getyear() {
     read year
     re1='^[0-9999]+$'
     if ! [[ $year =~ $re1 ]] || [[ $year -lt 1753 ]] || [[ $year -gt 9999 ]]; then
-        echo "error: not a valid year"
-        exit 1
+    echo "error: not a valid year"
+    exit 1
     fi
     prefix=$(echo $year | cut -c1-2)
 }
 
 decade() {
+    startdays=(0 5 3 2)
     decadecounter=0
     for ii in {17..99}
     do
@@ -42,25 +39,11 @@ decade() {
     done    
 }
 
-year() {
-    yearcount=0
-    for i in {0..99}
-    do
-        while [[ ${#i} -lt 2 ]] ; do
-            i="0${i}"
-        done
-        x=${myalgorithm[$yearcount]}
-        y=$((x+startday))
-        if [[ $y -gt 6 ]]; then
-            y=$((y % 7))
-        fi
-        echo "In ${prefix}${i} pi day (3/14) falls on a ${days[$y]}" | grep $year 2> /dev/null 
-        if [[ $yearcount -gt 27 ]]; then
-            yearcount=1
-        else
-            yearcount=$((yearcount+1))
-        fi
-    done
+day() {
+    lasttwo=$(echo $year | cut -c3-4)
+    leapyears=$((lasttwo / 4))
+    y=$(((lasttwo + leapyears + startday) % 7))
+    echo "In ${year} pi day (3/14) falls on a ${days[$y]}"
 }
 
 pretty() {
@@ -70,6 +53,6 @@ pretty() {
 getyear
 decade
 pretty
-year
+day
 pretty
  
