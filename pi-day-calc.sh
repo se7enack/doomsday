@@ -3,6 +3,7 @@
 # Stephen Burke 10/06/2023
 
 myalgorithm=(0 1 2 3 5 6 0 1 3 4 5 6 1 2 3 4 6 0 1 2 4 5 6 0 2 3 4 5)
+
 startdays=(0 5 3 2)
 
 days[0]='Sunday'
@@ -51,11 +52,9 @@ year() {
         x=${myalgorithm[$yearcount]}
         y=$((x+startday))
         if [[ $y -gt 6 ]]; then
-            z=$((y % 7))
-        else
-            z=$y
+            y=$((y % 7))
         fi
-        echo "In ${prefix}${i} pi day (3/14) falls on a ${days[$z]}" | grep $year 2> /dev/null 
+        echo "In ${prefix}${i} pi day (3/14) falls on a ${days[$y]}" | grep $year 2> /dev/null 
         if [[ $yearcount -gt 27 ]]; then
             yearcount=1
         else
@@ -73,3 +72,4 @@ decade
 pretty
 year
 pretty
+ 
