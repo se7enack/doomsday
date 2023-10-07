@@ -15,7 +15,7 @@ days[5]='Friday'
 days[6]='Saturday'
 
 getyear() {
-    echo "Enter a 4 digit year from 1753-9999: "
+    echo -n "Enter a 4 digit year from 1753-9999: "
     read year
     re1='^[0-9999]+$'
     if ! [[ $year =~ $re1 ]] || [[ $year -lt 1753 ]] || [[ $year -gt 9999 ]]; then
