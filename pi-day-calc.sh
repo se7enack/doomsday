@@ -19,7 +19,7 @@ getyear() {
     read year
     re1='^[0-9999]+$'
     if ! [[ $year =~ $re1 ]] || [[ $year -lt 1753 ]] || [[ $year -gt 9999 ]]; then
-    echo "error: not a valid year"
+        echo "error: not a valid year"
     exit 1
     fi
     prefix=$(echo $year | cut -c1-2)
