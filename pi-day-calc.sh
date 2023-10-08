@@ -1,25 +1,22 @@
 #!/usr/bin/env bash
 
-# Stephen Burke 10/06/2023 - Gregorian calendar doomsday day-of-the-week calculator
+# Stephen Burke 10/06/2023
 
-days[0]='Sunday'
-days[1]='Monday'
-days[2]='Tuesday'
-days[3]='Wednesday'
-days[4]='Thursday'
-days[5]='Friday'
-days[6]='Saturday'
 
-getyear() {
-    echo -n "Enter a 4 digit year from 1753-9999: "
-    read year
-    re1='^[0-9999]+$'
-    if ! [[ $year =~ $re1 ]] || [[ $year -lt 1753 ]] || [[ $year -gt 9999 ]]; then
-        echo "error: not a valid year"
-        exit 1
-    fi
-    prefix=$(echo $year | cut -c1-2)
+day() {
+    days[0]='Sunday'
+    days[1]='Monday'
+    days[2]='Tuesday'
+    days[3]='Wednesday'
+    days[4]='Thursday'
+    days[5]='Friday'
+    days[6]='Saturday'
+    lasttwo=$(echo $year | cut -c3-4)
+    leapyears=$((lasttwo / 4))
+    y=$(((lasttwo + leapyears + startday) % 7))
+    echo "In ${year} pi day (3/14) falls on a ${days[$y]}"
 }
+
 
 decade() {
     startdays=(0 5 3 2)
@@ -39,16 +36,23 @@ decade() {
     done    
 }
 
-day() {
-    lasttwo=$(echo $year | cut -c3-4)
-    leapyears=$((lasttwo / 4))
-    y=$(((lasttwo + leapyears + startday) % 7))
-    echo "In ${year} pi day (3/14) falls on a ${days[$y]}"
+
+getyear() {
+    echo -n "Enter a 4 digit year from 1753-9999: "
+    read year
+    re1='^[0-9999]+$'
+    if ! [[ $year =~ $re1 ]] || [[ $year -lt 1753 ]] || [[ $year -gt 9999 ]]; then
+        echo "error: not a valid year"
+        exit 1
+    fi
+    prefix=$(echo $year | cut -c1-2)
 }
+
 
 pretty() {
     echo "<><><><><><><><><><><><><><><><><><><><><>"
 }
+
 
 getyear
 decade
