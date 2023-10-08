@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Stephen Burke 10/06/2023
+# Stephen Burke 10/06/2023 - Gregorian calendar doomsday day-of-the-week calculator
 
 
 day() {
