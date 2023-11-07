@@ -16,16 +16,22 @@ def century(y):
         if y == i:
             return startdays[centurycounter]
         centurycounter = centurycounter + 1
+        
+
+def output():
+    print("\n<><><><><><><><><><><><><><><><><><><><><>")
+    print("In", year, "pi day (3/14) falls on a", day(dotw) + ".")
+    print("<><><><><><><><><><><><><><><><><><><><><>\n")
 
 
 try:
-    year = int(input('Enter a 4 digit year between 1700 & 2099:'))
+    year = int(input('Enter a 4 digit year between 1700 & 2099: '))
     if len(str(year)) == 4:
         year = str(year)
         cen, dec = int(year[:len(year)//2]), int(year[len(year)//2:])
         c = century(cen)
         dotw = int(dec / 4 + dec + c) % 7
-        print("In", year, "pi day (3/14) falls on a", day(dotw) + ".")
+        output()
 except:
     print("Error: Only excepts years between 1700 & 2099")
-     
+ 
