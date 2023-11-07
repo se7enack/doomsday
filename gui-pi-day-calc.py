@@ -25,7 +25,7 @@ class MainWindow(QWidget):
 
         self.result_label = QLabel('', self)
 
-        layout.addRow('Date:', self.date_edit)
+        layout.addRow('Year:', self.date_edit)
         layout.addRow(self.result_label)
 
         self.show()
