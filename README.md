@@ -1,4 +1,4 @@
-# The Doomsday Algorithm Memory Tester
+# The Doomsday Algorithm
 
 Usage:
 ```
