@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-# # Stephen Burke 11/07/2023 - Gregorian calendar doomsday day-of-the-week calculator
+# # Stephen Burke 10/06/2023 - Gregorian calendar doomsday day-of-the-week calculator
 
 
 import sys
@@ -46,15 +46,17 @@ class MainWindow(QWidget):
         
         
     def gotime(self, year):
-        cen, dec = int(year[:len(year)//2]), int(year[len(year)//2:])
-        if 18 << int(cen) <<  30:
-            c = self.century(cen)
-            dotw = int(dec / 4 + dec + c) % 7
-            weekday = self.day(dotw)
-            self.result_label.setText("For " + str(year) + " Pi-Day (3/14) is on a " + weekday + ".")
-        else:
-            print("Error: Only excepts years between 1700 & 2099")
-
+        try: 
+            cen, dec = int(year[:len(year)//2]), int(year[len(year)//2:])
+            if int(cen) <=  20:
+                c = self.century(cen)
+                dotw = int(dec / 4 + dec + c) % 7
+                weekday = self.day(dotw)
+                self.result_label.setText("For " + str(year) + " Pi-Day (3/14) is on a " + weekday + ".")
+            else:
+                self.result_label.setText("Only years between 1759 & 2099")
+        except:
+            self.result_label.setText("An unknown error occurred!")
 
     def update(self):
         value = self.date_edit.date()
