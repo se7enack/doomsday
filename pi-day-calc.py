@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 
+
 # # Stephen Burke 10/06/2023 - Gregorian calendar doomsday day-of-the-week calculator
+
 
 def day(x):
     days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     return days[x]
-    
-# print(day(4))
+
 
 def century(y):
     startdays = [0, 5, 3, 2]
@@ -15,6 +16,7 @@ def century(y):
         if y == i:
             return startdays[centurycounter]
         centurycounter = centurycounter + 1
+
 
 try:
     year = int(input('Enter a 4 digit year between 1700 & 2099:'))
