@@ -22,10 +22,9 @@ try:
     year = int(input('Enter a 4 digit year between 1700 & 2099:'))
     if len(str(year)) == 4:
         year = str(year)
-        cen, dec = year[:len(year)//2], year[len(year)//2:]
-        cen, dec = int(cen), int(dec)
+        cen, dec = int(year[:len(year)//2]), int(year[len(year)//2:])
         c = century(cen)
-        dotw = int(dec/4+dec+c)%7
+        dotw = int(dec / 4 + dec + c) % 7
         print("In", year, "pi day (3/14) falls on a", day(dotw) + ".")
 except:
     print("Error: Only excepts years between 1700 & 2099")
