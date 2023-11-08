@@ -13,7 +13,7 @@ class MainWindow(QWidget):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.setWindowTitle('Enter Year')
+        self.setWindowTitle('Doomsday Calculator')
         self.setMinimumWidth(295)
 
         layout = QFormLayout()
