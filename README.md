@@ -39,4 +39,6 @@ So for 1991 it would return "1". Add that to it's century start day of Wednesday
 5 Friday
 6 Saturday
 ```
-3/14/1991 is a Thursday...
+3/14/1991 was on a Thursday!
+
+ 
