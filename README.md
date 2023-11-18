@@ -13,7 +13,7 @@ In 2084 pi day (3/14) falls on a Tuesday.
 
 The crux of the thing is ```int(x/4+x)%7``` with adjustments needed for the starting position day of each century. Those repeatedly rotate through ```0, 5, 3, 2``` with 0 being Sunday.
 
-Example (starting position day):
+Example (century starting position day):
 ```
 0 Sunday - 1700's
 5 Friday - 1800's
@@ -29,7 +29,7 @@ In Python:
 >>> int(x/4+x)%7
 1
 ```
-So for 1991 it would return "1". Add that to it's decade start day of Wednesday(3) you'd get "4". 
+So for 1991 it would return "1". Add that to it's century start day of Wednesday(3) you'd get "4". 
 ```
 0 Sunday
 1 Monday
