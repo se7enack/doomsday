@@ -29,7 +29,7 @@ In Python:
 >>> int(x/4+x)%7
 1
 ```
-So for 1991 it would return "1". Add that to it's century start day of Wednesday(3) you'd get "4". 
+So for 1991 it would return "1". Add that to it's century start day of Wednesday(3) and you'd get "4". 
 ```
 0 Sunday
 1 Monday
