@@ -11,7 +11,7 @@ In 2084 pi day (3/14) falls on a Tuesday.
 <><><><><><><><><><><><><><><><><><><><><>
 ```
 
-The crux of the thing is ```int(x/4+x)%7``` with adjustments needed for the starting position day of each century. Those repeatedly rotate through ```0, 5, 3, 2``` with 0 being Sunday.
+The crux of the thing is ```(x/4+x) mod 7``` with adjustments needed for the starting position day of each century. Those repeatedly rotate through ```0, 5, 3, 2``` with 0 being Sunday.
 
 Example (century starting position day):
 ```
