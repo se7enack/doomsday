@@ -33,7 +33,7 @@ In Python:
 >>> int((x/4+x)%7-(x/4+x)%1)
 1
 ```
-So for 1991 it would return "1". Add that to it's century start day of Wednesday(3) and you'd get "4". 
+So for 1991 (91) it would return "1". Add that to it's century start day of Wednesday(3) and you'd get "4". 
 ```
 0 Sunday
 1 Monday
@@ -45,4 +45,6 @@ So for 1991 it would return "1". Add that to it's century start day of Wednesday
 ```
 3/14/1991 was on a Thursday!
 
+
+- sb
  
