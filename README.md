@@ -15,16 +15,18 @@ In 2084 pi day (3/14) falls on a Tuesday.
 
 ## The Math Involved
 
-The crux of the thing is ```(ˣ⁄₄ + x) mod 7 - (ˣ⁄₄ + x) mod 1``` with adjustments needed for the starting position day of each century. Those repeatedly rotate through ```[0, 5, 3, 2]``` with 0 being Sunday.
+The crux of the thing is ```(ˣ⁄₄ + x) mod 7 - (ˣ⁄₄ + x) mod 1``` with adjustments needed for the starting position day of each century. Those repeatedly rotate through ```[2, 0, 5, 3]``` with 0 being Sunday.
 
 Example (century starting position day):
 ```
+2 Tuesday - 1600's
 0 Sunday - 1700's
 5 Friday - 1800's
 3 Wednesday - 1900's
 2 Tuesday - 2000's
 0 Sunday - 2100's
 5 Friday - 2200's
+etc...
 ```
 
 In Python:
